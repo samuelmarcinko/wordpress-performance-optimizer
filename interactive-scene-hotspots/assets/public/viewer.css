@@ -1,0 +1,97 @@
+.ish-viewer {
+  position: relative;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.ish-viewer-inner {
+  position: relative;
+}
+
+.ish-image-wrapper {
+  position: relative;
+}
+
+.ish-image {
+  width: 100%;
+  display: block;
+}
+
+.ish-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.ish-hotspot-shape {
+  fill: rgba(0, 170, 255, 0.25);
+  stroke: #0088cc;
+  stroke-width: 0.004;
+  cursor: pointer;
+  transition: fill 0.2s ease, stroke 0.2s ease;
+}
+
+.ish-tooltip {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  pointer-events: none;
+  opacity: 0;
+  transform: translate(-9999px, -9999px);
+  transition: opacity 0.15s ease;
+  z-index: 5;
+}
+
+.ish-tooltip.is-visible {
+  opacity: 1;
+}
+
+.ish-viewer.is-transitioning .ish-image,
+.ish-viewer.is-transitioning .ish-overlay {
+  opacity: 0.4;
+  transition: opacity 0.25s ease;
+}
+
+.ish-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  z-index: 9999;
+}
+
+.ish-modal.is-visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.ish-modal-content {
+  background: #fff;
+  max-width: 600px;
+  width: 90%;
+  padding: 24px;
+  border-radius: 8px;
+  position: relative;
+}
+
+.ish-modal-close {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
